@@ -11,7 +11,7 @@ use File::Slurp;
 use strict;
 use Data::Dumper;
 
-my $db = "/home/jjdavis/CEPI/Services/dev_container/modules/genomad/genomad_db"; 
+my $db = "/vol/bvbrc/production/application-backend/genomad/genomad_db"; 
 my $script = Bio::KBase::AppService::AppScript->new(\&genomad, \&preflight);
 $script->run(\@ARGV);
 

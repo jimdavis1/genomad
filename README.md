@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Genomad service uses the genomad tool (https://github.com/apcamargo/genomad) to identify viral, pro-viral, and plasmid contigs in genomic and metagenomic assemblies. The tool employs a hybrid classification approach that combines an alignment-free neural network with a gene-based classifier that utilizes a  database of over 200,000 marker protein profiles specific to chromosomes, plasmids, and viruses. Genomad also provides taxonomic assignment of viral genomes using ICTV taxonomy.
+The Genomad service uses the genomad tool (https://github.com/apcamargo/genomad) to identify viral, pro-viral, and plasmid contigs in genomic and metagenomic assemblies. The tool employs a hybrid classification approach that combines an alignment-free neural network with a gene-based classifier that utilizes a  database of marker protein profiles specific to chromosomes, plasmids, and viruses. Genomad also provides taxonomic assignment of viral genomes using ICTV taxonomy.
 
 The app currently does a simple run of genomad, with no additional processing.  In future versions we plan to add viral annotation and our own plasmid classification tools. 
 
@@ -11,7 +11,7 @@ The app currently does a simple run of genomad, with no additional processing.  
 
 The input to the servcie is assembled contigs in fasta format.  It will fail with any other file type. 
 
-# Genomad Service Output Files
+### Genomad Service Output Files
 
 | File Name | Description |
 |-----------|-------------|
@@ -27,7 +27,7 @@ The input to the servcie is assembled contigs in fasta format.  It will fail wit
 | geNomad_run.stderr | Standard error log file from the geNomad run |
 
 
-The output files are greatly reduced compared to all of the output the genomad command line tool produces.  The app pushes these files back into the workspace from a full output directory, so if there is desire to do so, we could add back more of the results files.  
+The output files are greatly reduced compared to all of the output the genomad command line tool produces.  The app pushes these files back into the workspace from the full output directory, so we could add back more of the results files if it is justifiable.  
 
 ## About this module
 
@@ -51,10 +51,4 @@ Identification of mobile genetic elements with genomad Camargo, A.P., Roux, S., 
 https://portal.nersc.gov/genomad/
 
 https://github.com/apcamargo/genomad?tab=readme-ov-file
-
-rnadeepvirome_pt.9440000001_virus.fna
-
-
-geNomad is a state-of-the-art computational framework that identifies mobile genetic elements—specifically viruses and plasmids—in nucleotide sequencing data from genomes, metagenomes, and metatranscriptomes. The tool employs a hybrid classification approach that combines an alignment-free neural network (using the IGLOO architecture) with a gene-based classifier that utilizes a comprehensive database of over 200,000 marker protein profiles specific to chromosomes, plasmids, and viruses. Beyond classification, geNomad provides taxonomic assignment of viral genomes following ICTV taxonomy, identifies integrated proviruses within host genomes using a conditional random field model, and performs functional annotation of encoded proteins. In benchmarks, geNomad demonstrated superior performance compared to existing tools, achieving Matthews correlation coefficients of 77.8% for plasmids and 95.3% for viruses, while being significantly faster and more scalable—enabling the processing of over 2.7 trillion base pairs of sequencing data to populate the IMG/VR and IMG/PR databases.
-
 
